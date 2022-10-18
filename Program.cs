@@ -1,4 +1,7 @@
-﻿namespace Part_7___Collections
+﻿using System;
+using System.Linq;
+
+namespace Part_7___Collections
 {
     internal class Program
     {
@@ -6,6 +9,9 @@
         {
             string choice = "";
             int addlist;
+            int removelist;
+            double countlist;
+            double listmax;
             Random generator = new Random();
             List<double> numbers = new List<double>();
             for(int i = 0; i < 25; i++) 
@@ -13,7 +19,7 @@
 
             List<double> numbers2 = new List<double>();
             for (int i = 0; i < 25; i++)
-                numbers.Add(generator.Next(10, 21));
+                numbers2.Add(generator.Next(10, 21));
 
             while (choice != "8")
             {
@@ -39,7 +45,8 @@
                 {
            
                     Console.WriteLine("You chose option 1");
-                    Console.WriteLine(numbers.Sort());
+                    numbers.Sort();
+                    
                     Console.WriteLine("Hit ENTER to continue.");
                     Console.ReadLine();
                 }
@@ -57,6 +64,11 @@
                   
                     Console.WriteLine("You chose option 3");
                     Console.WriteLine("Enter a number to remove from the list");
+                    removelist = Convert.ToInt32(Console.ReadLine());
+                    numbers.Remove(removelist);
+                    Console.WriteLine("Number sucessfully removed.");
+                    Console.WriteLine();
+                    Thread.Sleep(2000);
                     Console.WriteLine("Hit ENTER to continue.");
                     Console.ReadLine();
 
@@ -75,13 +87,16 @@
                 {
                    
                     Console.WriteLine("You chose option 5");
-                    Console.WriteLine("Hit ENTER to continue.");
+                    Console.WriteLine("Choose a number in the list and this will count the number of occurances of that number");
+                    
+                                            Console.WriteLine("Hit ENTER to continue.");
                     Console.ReadLine();
                 }
                 else if (choice == "6")
                 {
                
                     Console.WriteLine("You chose option 6");
+                    Console.WriteLine("Maximum Value in list is: " + numbers.Max());
                     Console.WriteLine("Hit ENTER to continue.");
                     Console.ReadLine();
                 }
@@ -89,6 +104,7 @@
                 {
                 
                     Console.WriteLine("You chose option 7");
+                    Console.WriteLine("Minimum Value in list is: " + numbers.Min());
                     Console.WriteLine("Hit ENTER to continue.");
                     Console.ReadLine();
                 }
