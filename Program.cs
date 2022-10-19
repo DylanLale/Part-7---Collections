@@ -12,6 +12,7 @@ namespace Part_7___Collections
             int removelist;
             double countlist;
             double listmax;
+            int occurance;
             Random generator = new Random();
             List<double> numbers = new List<double>();
             for(int i = 0; i < 25; i++) 
@@ -23,7 +24,7 @@ namespace Part_7___Collections
 
             while (choice != "8")
             {
-                for(int i = 0; i < 25; i++) 
+                for(int i = 0; i < numbers.Count; i++) 
                     Console.Write($"{numbers[i]},");
                 Console.WriteLine();
                 Console.WriteLine("Welcome to my list menu.  Please select an option:");
@@ -55,7 +56,7 @@ namespace Part_7___Collections
             
                     Console.WriteLine("You chose option 2");
                     for (int i = 0; i < 25; i++)
-                        Console.Write($"{numbers2[i]},");
+                        Console.Write($",{numbers2[i]}");
                     Console.WriteLine("Hit ENTER to continue.");
                     Console.ReadLine();
                 }
@@ -85,11 +86,24 @@ namespace Part_7___Collections
                 }
                 else if (choice == "5")
                 {
-                   
+                    occurance = 0;
                     Console.WriteLine("You chose option 5");
                     Console.WriteLine("Choose a number in the list and this will count the number of occurances of that number");
-                    
-                                            Console.WriteLine("Hit ENTER to continue.");
+                    countlist = Convert.ToInt32(Console.ReadLine());
+                    for (int i = 0; i < numbers.Count; i++)
+                    {
+                 
+
+                        if (numbers[i] == countlist)
+                        {
+                            occurance += 1;
+                        }
+                    }
+                    Console.WriteLine($"The number of occurances of the number " +  countlist + " is " + occurance);
+
+
+
+                    Console.WriteLine("Hit ENTER to continue.");
                     Console.ReadLine();
                 }
                 else if (choice == "6")
