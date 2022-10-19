@@ -15,7 +15,7 @@ namespace Part_7___Collections
             int occurance;
             Random generator = new Random();
             List<double> numbers = new List<double>();
-            for(int i = 0; i < 25; i++) 
+            for (int i = 0; i < 25; i++)
                 numbers.Add(generator.Next(10, 21));
 
             List<double> numbers2 = new List<double>();
@@ -24,7 +24,7 @@ namespace Part_7___Collections
 
             while (choice != "8")
             {
-                for(int i = 0; i < numbers.Count; i++) 
+                for (int i = 0; i < numbers.Count; i++)
                     Console.Write($"{numbers[i]},");
                 Console.WriteLine();
                 Console.WriteLine("Welcome to my list menu.  Please select an option:");
@@ -44,16 +44,16 @@ namespace Part_7___Collections
 
                 if (choice == "1")
                 {
-           
+
                     Console.WriteLine("You chose option 1");
                     numbers.Sort();
-                    
+
                     Console.WriteLine("Hit ENTER to continue.");
                     Console.ReadLine();
                 }
                 else if (choice == "2")
                 {
-            
+
                     Console.WriteLine("You chose option 2");
                     for (int i = 0; i < 25; i++)
                         Console.Write($",{numbers2[i]}");
@@ -62,7 +62,7 @@ namespace Part_7___Collections
                 }
                 else if (choice == "3")
                 {
-                  
+
                     Console.WriteLine("You chose option 3");
                     Console.WriteLine("Enter a number to remove from the list");
                     removelist = Convert.ToInt32(Console.ReadLine());
@@ -76,7 +76,7 @@ namespace Part_7___Collections
                 }
                 else if (choice == "4")
                 {
-                    
+
                     Console.WriteLine("You chose option 4");
                     Console.WriteLine("Add a number to the list");
                     addlist = Convert.ToInt32(Console.ReadLine());
@@ -92,14 +92,14 @@ namespace Part_7___Collections
                     countlist = Convert.ToInt32(Console.ReadLine());
                     for (int i = 0; i < numbers.Count; i++)
                     {
-                 
+
 
                         if (numbers[i] == countlist)
                         {
                             occurance += 1;
                         }
                     }
-                    Console.WriteLine($"The number of occurances of the number " +  countlist + " is " + occurance);
+                    Console.WriteLine($"The number of occurances of the number " + countlist + " is " + occurance);
 
 
 
@@ -108,7 +108,7 @@ namespace Part_7___Collections
                 }
                 else if (choice == "6")
                 {
-               
+
                     Console.WriteLine("You chose option 6");
                     Console.WriteLine("Maximum Value in list is: " + numbers.Max());
                     Console.WriteLine("Hit ENTER to continue.");
@@ -116,18 +116,85 @@ namespace Part_7___Collections
                 }
                 else if (choice == "7")
                 {
-                
+
                     Console.WriteLine("You chose option 7");
                     Console.WriteLine("Minimum Value in list is: " + numbers.Min());
                     Console.WriteLine("Hit ENTER to continue.");
                     Console.ReadLine();
                 }
-               
+
                 else
                 {
                     Console.WriteLine("Invalid choice, press ENTER to continue.");
                     Console.ReadLine();
                 }
+            }
+            List<string> names = new List<string>() {};
+            while (choice != "q")
+            {
+                Console.Clear(); // Optional
+                Console.WriteLine("Please select an option:");
+                Console.WriteLine();
+                Console.WriteLine("1 – Remove a vegetable by index");
+                Console.WriteLine("2 – Remove a vegetable by value");
+                Console.WriteLine("3 – Search for a vegetable");
+                Console.WriteLine("4 – Add a vegetable");
+                Console.WriteLine("5 – Sort list");
+                Console.WriteLine("6 – Clear the list");
+                Console.WriteLine("Q - Quit");
+                Console.WriteLine();
+                choice = Console.ReadLine().ToLower().Trim();
+                Console.WriteLine();
+
+                if (choice == "1")
+                {
+                    //Do option 1
+                    Console.WriteLine("You chose option 1");
+                    Console.WriteLine("Hit ENTER to continue.");
+                    Console.ReadLine();
+                }
+                else if (choice == "2")
+                {
+                    // Do option 2
+                    Console.WriteLine("You chose option 2");
+                    Console.WriteLine("Hit ENTER to continue.");
+                    Console.ReadLine();
+                }
+                else if (choice == "3")
+                {
+                    // Do option 2
+                    Console.WriteLine("You chose option 3");
+                    Console.WriteLine("Hit ENTER to continue.");
+                    Console.ReadLine();
+                }
+                else if (choice == "4")
+                {
+                    // Do option 2
+                    Console.WriteLine("You chose option 4");
+                    Console.WriteLine("Hit ENTER to continue.");
+                    Console.ReadLine();
+                }
+                else if (choice == "5")
+                {
+                    // Do option 2
+                    Console.WriteLine("You chose option 5");
+                    Console.WriteLine("Hit ENTER to continue.");
+                    Console.ReadLine();
+                }
+                else if (choice == "6")
+                {
+                    // Do option 2
+                    Console.WriteLine("You chose option 6");
+                    Console.WriteLine("Hit ENTER to continue.");
+                    Console.ReadLine();
+                }
+                // Add an else if for each valid choice...
+                else
+                {
+                    Console.WriteLine("Invalid choice, press ENTER to continue.");
+                    Console.ReadLine();
+                }
+
             }
         }
     }
