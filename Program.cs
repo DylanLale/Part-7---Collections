@@ -143,7 +143,7 @@ namespace Part_7___Collections
             while (choice != "q")
             {
                 for (int i = 0; i < veggies.Count; i++)
-                    Console.Write($"{veggies[i]},");
+                    Console.WriteLine($"{veggies[i]},");
 
                 Console.WriteLine("Please select an option:");
                 Console.WriteLine();
@@ -160,8 +160,8 @@ namespace Part_7___Collections
 
                 if (choice == "1")
                 {
-                    //Do option 1
                     Console.WriteLine("You chose option 1");
+                    Console.WriteLine("Remove a vegetable by number.");
                     veggiesindex = Convert.ToInt32(Console.ReadLine());
                     veggies.Remove(veggies[veggiesindex]);
                     Console.WriteLine("Hit ENTER to continue.");
@@ -169,8 +169,8 @@ namespace Part_7___Collections
                 }
                 else if (choice == "2")
                 {
-                    // Do option 2
                     Console.WriteLine("You chose option 2");
+                    Console.WriteLine("Remove a vegetable by words");
                     veggiesvalue = Console.ReadLine();
                     veggies.Remove(veggiesvalue);
                     Console.WriteLine("Hit ENTER to continue.");
@@ -178,14 +178,28 @@ namespace Part_7___Collections
                 }
                 else if (choice == "3")
                 {
-                    // Do option 2
                     Console.WriteLine("You chose option 3");
+                    Console.WriteLine("Search for a vegetable");
+                    veggiesearch = Console.ReadLine();
+                    if (veggiesearch == veggies[i])
+                    {
+                        Console.WriteLine("Yes that is in the list");
+                    }
+
+                    else if (veggiesearch != veggies[i])
+                    {
+                        Console.WriteLine("No that isn't in the list");
+
+                    }
+
+
                     Console.WriteLine("Hit ENTER to continue.");
                     Console.ReadLine();
                 }
                 else if (choice == "4")
                 {
                     Console.WriteLine("You chose option 4");
+                    Console.WriteLine("Add a vegetable to the list");
                     addveggie = Console.ReadLine();
                     veggies.Add(addveggie);
                     Console.WriteLine("Hit ENTER to continue.");
@@ -193,7 +207,6 @@ namespace Part_7___Collections
                 }
                 else if (choice == "5")
                 {
-                    // Do option 2
                     Console.WriteLine("You chose option 5");
                     veggies.Sort();
                     Console.WriteLine("Hit ENTER to continue.");
@@ -201,12 +214,11 @@ namespace Part_7___Collections
                 }
                 else if (choice == "6")
                 {
-                    // Do option 2
                     Console.WriteLine("You chose option 6");
                     Console.WriteLine("Hit ENTER to continue.");
+                    veggies.Clear();
                     Console.ReadLine();
                 }
-                // Add an else if for each valid choice...
                 else
                 {
                     Console.WriteLine("Invalid choice, press ENTER to continue.");
