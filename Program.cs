@@ -188,8 +188,11 @@ namespace Part_7___Collections
 
 
                         if (veggies[i] == veggiesearch)
-                           (appearance += 1);
-                        
+                        {
+                            (appearance += 1);
+
+                        }
+
 
                         if (appearance >= 1)
                             Console.WriteLine("Yes it is in the list");
@@ -214,6 +217,8 @@ namespace Part_7___Collections
                 else if (choice == "5")
                 {
                     Console.WriteLine("You chose option 5");
+                    Console.WriteLine("Sorting List.....");
+                    Thread.Sleep(2000);
                     veggies.Sort();
                     Console.WriteLine("Hit ENTER to continue.");
                     Console.ReadLine();
@@ -221,8 +226,12 @@ namespace Part_7___Collections
                 else if (choice == "6")
                 {
                     Console.WriteLine("You chose option 6");
-                    Console.WriteLine("Hit ENTER to continue.");
+                    Console.WriteLine("Clearing list....");
+                    Thread.Sleep(2000);
                     veggies.Clear();
+                    Console.WriteLine("Hit ENTER to continue.");
+                    
+                    
                     Console.ReadLine();
                 }
                 else
