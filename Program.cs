@@ -16,6 +16,7 @@ namespace Part_7___Collections
             int veggiesindex;
             int occurance;
             string veggiesearch;
+            int appearance;
             Random generator = new Random();
             List<double> numbers = new List<double>();
             for (int i = 0; i < 25; i++)
@@ -132,6 +133,7 @@ namespace Part_7___Collections
                     Console.ReadLine();
                 }
             }
+            
             List<string> veggies = new List<string>() {"Vegetables"};
             veggies.Add("1 – CARROT");
             veggies.Add("2 – BEET");
@@ -181,20 +183,24 @@ namespace Part_7___Collections
                     Console.WriteLine("You chose option 3");
                     Console.WriteLine("Search for a vegetable");
                     veggiesearch = Console.ReadLine();
-                    if (veggiesearch == veggies[i])
+                    for (int i = 0; i < veggies.Count; i++)
                     {
-                        Console.WriteLine("Yes that is in the list");
+
+
+                        if (veggies[i] == veggiesearch)
+                           (appearance += 1);
+                        
+
+                        if (appearance >= 1)
+                            Console.WriteLine("Yes it is in the list");
+
+                        if (appearance == 0)
+                            Console.WriteLine("No that isn't in the list");
+
+
+                        Console.WriteLine("Hit ENTER to continue.");
+                        Console.ReadLine();
                     }
-
-                    else if (veggiesearch != veggies[i])
-                    {
-                        Console.WriteLine("No that isn't in the list");
-
-                    }
-
-
-                    Console.WriteLine("Hit ENTER to continue.");
-                    Console.ReadLine();
                 }
                 else if (choice == "4")
                 {
