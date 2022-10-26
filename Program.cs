@@ -16,7 +16,7 @@ namespace Part_7___Collections
             int veggiesindex;
             int occurance;
             string veggiesearch;
-            int appearance;
+            int appearance = 0;
             Random generator = new Random();
             List<double> numbers = new List<double>();
             for (int i = 0; i < 25; i++)
@@ -188,10 +188,8 @@ namespace Part_7___Collections
 
 
                         if (veggies[i] == veggiesearch)
-                        {
-                            (appearance += 1);
-
-                        }
+                            appearance += 1;
+                        
 
 
                         if (appearance >= 1)
